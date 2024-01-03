@@ -3,32 +3,22 @@ import re
 from collections import Counter
 
 def analyze_log(log_file):
-    try:
-        with open(log_file, 'r') as file:
-            # Read all lines from the log file
-            lines = file.readlines()
+    with open(log_file, 'r') as file:
+        log_content = file.read()
 
-            # Count occurrences of each log level
-            log_levels = re.findall(r'\b(?:INFO|WARNING|ERROR|DEBUG)\b', ' '.join(lines))
-            log_level_counts = Counter(log_levels)
+        # Extract IP addresses from the log using a simple regex
+        ip_addresses = re.findall(r'\d+\.\d+\.\d+\.\d+', log_content)
 
-            # Print log level statistics
-            print("Log Level Statistics:")
-            for level, count in log_level_counts.items():
-                print(f"{level}: {count} occurrences")
+        # Count occurrences of each IP address
+        ip_counts = Counter(ip_addresses)
 
-            # Example: Extract and print IP addresses
-            ip_addresses = re.findall(r'\b(?:\d{1,3}\.){3}\d{1,3}\b', ' '.join(lines))
-            unique_ip_addresses = set(ip_addresses)
-
-            print("\nUnique IP Addresses:")
-            for ip_address in unique_ip_addresses:
-                print(ip_address)
-
-    except FileNotFoundError:
-        print(f"Error: File '{log_file}' not found.")
+        # Print the results
+        print("IP Address\tOccurrences")
+        print("-------------------------")
+        for ip, count in ip_counts.items():
+            print(f"{ip}\t\t{count}")
 
 if __name__ == "__main__":
-    # Replace 'your_log_file.log' with the path to your log file
-    log_file_path = 'your_log_file.log'
-    analyze_log(log_file_path)
+    # Replace 'example.log' with the actual log file name
+    log_file = 'example.log'
+    analyze_log(log_file)
