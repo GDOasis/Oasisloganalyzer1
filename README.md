@@ -11,9 +11,9 @@ A simple Python script for analyzing log files. This script provides basic stati
 
 ```bash
 
-git clone https://github.com/your-username/log-analyzer.git
+git clone https://github.com/GDOasis/Oasisloganalyzer1.git
 
-cd log-analyzer
+cd Oasisloganalyzer1
 
 Open the log_analyzer.py script and modify the your_log_file.log variable to the path of your log file.
 
