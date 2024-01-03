@@ -1,13 +1,13 @@
 # Oasisloganalyzer1
 Log Analyzer Tool
 
-# Log Analyze
+**# Log Analyze**
 
 A simple Python script for analyzing log files. This script provides basic statistics such as log level occurrences and unique IP addresses. Customize and expand the functionality based on your log file format and analysis requirements.
 
-## Usage
+**## Usage**
 
-1. Clone the repository to your local machine:
+1**. Clone the repository to your local machine:**
 
 ```bash
 
@@ -22,16 +22,16 @@ Run the log analyzer script:
 python log_analyzer.py
 
 
-Log Level Statistics
+**Log Level Statistics**
 The script extracts and counts occurrences of log levels (INFO, WARNING, ERROR, DEBUG) from the log file.
 
-Unique IP Addresses
+**Unique IP Addresses**
 The script also extracts and prints unique IP addresses found in the log file.
 
-Customization
+**Customization**
 Feel free to customize the regular expressions and analysis logic in the script based on your log file format and specific analysis requirements.
 
-Disclaimer
+**Disclaimer**
 This script is provided as-is without any warranty. Use it responsibly and at your own risk.
 
 Contributing
